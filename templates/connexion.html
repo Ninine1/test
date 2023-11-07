@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/style.css">
+    </link>
+    <title>Zoro - Login</title>
+</head>
+
+<body>
+
+    <section class="first">
+
+        <header>Zoro</header>
+
+
+        <div class="grey">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+            <form action="{{url_for('accueil')}}" class="sign_in" method="POST">
+
+                Connectez-vous
+
+
+                <input class="btn1" placeholder="Identifiant" name="username">
+                <input class="btn2" placeholder="Mot de passe" name="password">
+                <div class="btna">
+
+                    <!---<button type="submit" class="btn3" style="text-decoration: none; border: none;">Login</button> -->
+                    <a href="/accueil/" class="btn3" style="text-decoration: none; border: none;">Connexion</a>
+                </div>
+                <a href="{{url_for('connexion')}}">si pas de compte inscrivez-vous</a>
+            </form>
+        </div>
+
+
+    </section>
+
+    <!-- une fois le header fait, supp la barre bleue  -->
+
+
+</body>
+
+</html>

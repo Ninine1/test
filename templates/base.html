@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/style.css">
+    </link>
+    {% if title %}
+    <title>Zoro - {{title}} </title>
+    {% else %}
+    <title>Zoro</title>
+    {% endif %}
+
+</head>
+
+<body>
+    <section class="second">
+        {% include './base/header.html' %}
+
+        <div class="new_grey">
+            {% include './base/side_bar.html' %}
+
+            {% block centre %}
+            {% endblock %}
+
+        </div>
+
+    </section>
+
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+
+</body>
+
+</html>
